@@ -484,12 +484,12 @@
             <p class="text-sm muted">Selecciona la categoría y añade los datos básicos del par que quieres vender.</p>
           </div>
           <div class="flex-col">
-            <button class="card-btn" data-gender="Mujer">
-              <span class="card-title">Mujer</span>
+            <button class="card-btn" data-gender="Shoes">
+              <span class="card-title">Shoes</span>
               <span class="arrow">→</span>
             </button>
-            <button class="card-btn" data-gender="Hombre">
-              <span class="card-title">Hombre</span>
+            <button class="card-btn" data-gender="Other items">
+              <span class="card-title">Other items</span>
               <span class="arrow">→</span>
             </button>
           </div>
@@ -535,9 +535,9 @@
         </section>
 
         <section id="category-screen" class="screen stack-6">
-          <div>
+          <div class="stack-4">
             <p id="categoryEyebrow" class="eyebrow"></p>
-            <h1>Sección</h1>
+            <h1>Categorías</h1>
           </div>
           <div id="categoryGroups" class="stack-8"></div>
         </section>
@@ -564,12 +564,6 @@
           </div>
 
           <div class="stack-4">
-            <div class="field">
-              <label class="label">Año de compra</label>
-              <div class="input-wrap">
-                <input id="yearInput" type="text" placeholder="Ej. 2023" />
-              </div>
-            </div>
             <div class="field">
               <label class="label">Descripción</label>
               <div class="input-wrap textarea-wrap">
@@ -659,15 +653,11 @@
 
   <script>
     const CATEGORY_STRUCTURE = {
-      'Mujer': {
-        'Modelos': ['M89 Icon', 'M70 Soul', 'M82 Core'],
-        'Materiales': ['Corn vegan leather', 'Cactus material', 'Lignify bio-based', 'Suede'],
-        'Estado': ['Nuevo sin uso', 'Como nuevo', 'Perfectas condiciones']
+      'Shoes': {
+        'Modelos': ['M89 Icon', 'M89 Ground', 'M01 Atlas', 'M70 Soul', 'M82 Core', 'M26 Dawn', 'Barefoot', 'Vegan Sneakers']
       },
-      'Hombre': {
-        'Modelos': ['M89 Icon', 'M70 Soul', 'M82 Core'],
-        'Materiales': ['Corn vegan leather', 'Cactus material', 'Lignify bio-based', 'Suede'],
-        'Estado': ['Nuevo sin uso', 'Como nuevo', 'Perfectas condiciones']
+      'Other items': {
+        'Categorías': ['Clothing', 'Tote Bags']
       }
     };
 
@@ -695,7 +685,6 @@
         category: '',
         product: '',
         condition: '',
-        year: '',
         details: '',
         images: []
       }
@@ -734,7 +723,7 @@
 
     function resetFlow() {
       state.data = {
-        gender: '', group: '', category: '', product: '', condition: '', year: '', details: '', images: []
+        gender: '', group: '', category: '', product: '', condition: '', details: '', images: []
       };
       state.history = ['entry'];
       state.screen = 'entry';
@@ -744,7 +733,7 @@
 
     function startAnotherProduct() {
       state.data = {
-        gender: '', group: '', category: '', product: '', condition: '', year: '', details: '', images: []
+        gender: '', group: '', category: '', product: '', condition: '', details: '', images: []
       };
       state.history = ['entry'];
       state.screen = 'entry';
@@ -801,7 +790,7 @@
     }
 
     function renderCategories() {
-      document.getElementById('categoryEyebrow').textContent = `Paso 01 · ${state.data.gender}`;
+      document.getElementById('categoryEyebrow').textContent = 'Paso 01';
       const container = document.getElementById('categoryGroups');
       container.innerHTML = '';
 
@@ -866,10 +855,9 @@
       const product = document.getElementById('summaryProduct');
       const rows = [
         ['Producto', state.data.product || '—'],
-        ['Género', state.data.gender || '—'],
+        ['Tipo', state.data.gender || '—'],
         ['Categoría', state.data.category || '—'],
         ['Estado', state.data.condition || '—'],
-        ['Año', state.data.year || '—'],
         ['Imágenes', String(state.data.images.length)]
       ];
       product.innerHTML = rows.map(([k, v]) => `<div class="summary-row"><span>${k}</span><strong>${v}</strong></div>`).join('');
@@ -891,7 +879,6 @@
         (screenMap[state.screen] || []).forEach(id => document.getElementById(id).classList.add('active'));
       }
 
-      document.getElementById('yearInput').value = state.data.year;
       document.getElementById('detailsInput').value = state.data.details;
 
       renderCatalog();
@@ -927,7 +914,6 @@
     document.getElementById('toAddAnotherBtn').addEventListener('click', () => navigateTo('add-another'));
 
     document.getElementById('catalogSearch').addEventListener('input', renderCatalog);
-    document.getElementById('yearInput').addEventListener('input', (e) => updateData({ year: e.target.value }));
     document.getElementById('detailsInput').addEventListener('input', (e) => updateData({ details: e.target.value }));
 
     document.getElementById('imageInput').addEventListener('change', (e) => {
