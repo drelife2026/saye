@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAYE Pre-Owned - Sneakers sostenibles</title>
+  <meta
+    name="description"
+    content="Pagina pre-owned de SAYE: sneakers sostenibles revisadas, modelos iconicos y una segunda vida para cada par."
+  />
+  <meta name="theme-color" content="#ffffff" />
+
+  <style>
+    :root{
+      --paper:#ffffff;
+      --chalk:#ffffff;
+      --fog:#f4f4f2;
+      --ink:#161616;
+      --soft-ink:#5f5f5b;
+      --line:#dedbd5;
+      --deep-green:#31575d;
+      --moss:#6f7e69;
+      --gum:#a8754f;
+      --nav-h:64px;
+      --max:2048px;
+    }
+
+    *{box-sizing:border-box}
+
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      color:var(--ink);
+      background:var(--paper);
+      font-family:Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+      overflow-x:hidden;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    button{
+      border:0;
+      padding:0;
+      color:inherit;
+      background:transparent;
+      font:inherit;
+      cursor:pointer;
+    }
+
+    img{
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .container{
+      width:100%;
+      max-width:var(--max);
+      margin:0 auto;
+      padding:0 18px;
+    }
+
+    .navbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(255,255,255,.96);
+      border-bottom:1px solid rgba(22,22,22,.12);
+      backdrop-filter:blur(12px);
+    }
+
+    .nav-inner{
+      display:grid;
+      grid-template-columns:1fr auto 1fr;
+      align-items:center;
+      min-height:var(--nav-h);
+      gap:20px;
+    }
+
+    .nav-left,
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:18px;
+    }
+
+    .nav-actions{
+      justify-content:flex-end;
+    }
+
+    .wordmark{
+      font-family:Georgia, "Times New Roman", serif;
+      font-size:42px;
+      line-height:1;
+      color:#050505;
+    }
+
+    .hamburger,
+    .icon-btn{
+      width:34px;
+      height:34px;
+      display:inline-grid;
+      place-items:center;
+    }
+
+    .hamburger-lines{
+      width:22px;
+      height:16px;
+      position:relative;
+    }
+
+    .hamburger-lines::before,
+    .hamburger-lines::after,
+    .hamburger-lines span{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      height:1.5px;
+      background:var(--ink);
+    }
+
+    .hamburger-lines::before{top:0}
+    .hamburger-lines span{top:7px}
+    .hamburger-lines::after{bottom:0}
+
+    .icon{
+      width:23px;
+      height:23px;
+      stroke:currentColor;
+      stroke-width:1.7;
+      fill:none;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+    }
+
+    .mobile-menu{
+      display:none;
+      border-top:1px solid rgba(22,22,22,.1);
+      padding:16px 0 18px;
+    }
+
+    .mobile-menu.open{
+      display:block;
+    }
+
+    .mobile-menu a,
+    .mobile-menu button{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      width:100%;
+      min-height:42px;
+      color:var(--ink);
+      font-size:15px;
+      border-bottom:1px solid rgba(22,22,22,.1);
+    }
+
+    .impact-hero{
+      background:var(--paper);
+      border-bottom:1px solid var(--line);
+    }
+
+    .impact-grid{
+      min-height:calc(100vh - var(--nav-h));
+      display:grid;
+      grid-template-columns:minmax(0, .95fr) minmax(0, 1.05fr);
+      border-left:1px solid var(--line);
+      border-right:1px solid var(--line);
+      overflow:hidden;
+      background:var(--paper);
+    }
+
+    .impact-media{
+      min-height:720px;
+      position:relative;
+      overflow:hidden;
+      background:var(--paper);
+    }
+
+    .impact-media img{
+      object-position:center 70%;
+      transform:scale(1.5);
+      transform-origin:center;
+      filter:saturate(.92) contrast(.98);
+    }
+
+    .impact-content{
+      min-width:0;
+      padding:34px 32px 26px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:36px;
+      background:var(--paper);
+    }
+
+    .impact-kicker{
+      margin:0 0 18px;
+      color:#77746d;
+      font-size:13px;
+      font-weight:700;
+      text-transform:uppercase;
+    }
+
+    .impact-title{
+      margin:0;
+      max-width:920px;
+      color:#0b0b0b;
+      font-size:118px;
+      line-height:.92;
+      font-weight:800;
+      text-transform:uppercase;
+    }
+
+    .impact-title span{
+      display:block;
+    }
+
+    .impact-subcopy{
+      max-width:520px;
+      margin:28px 0 0;
+      color:#77746d;
+      font-size:15px;
+      line-height:1.45;
+      text-transform:uppercase;
+    }
+
+    .impact-actions{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:26px;
+    }
+
+    .impact-footer{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:24px;
+      color:#77746d;
+      text-transform:uppercase;
+    }
+
+    .impact-note{
+      max-width:250px;
+      margin:0;
+      font-size:13px;
+      line-height:1.35;
+    }
+
+    .impact-index{
+      font-size:13px;
+      font-weight:700;
+      white-space:nowrap;
+    }
+
+    .breadcrumb{
+      display:flex;
+      align-items:center;
+      min-height:70px;
+      color:var(--soft-ink);
+      font-size:18px;
+      border-bottom:1px solid rgba(22,22,22,.08);
+      overflow:hidden;
+    }
+
+    .breadcrumb a{
+      color:#777570;
+    }
+
+    .chevron{
+      width:16px;
+      height:16px;
+      margin:0 12px;
+      stroke:currentColor;
+      stroke-width:2;
+      fill:none;
+      flex:0 0 auto;
+    }
+
+    .collection-intro{
+      display:grid;
+      grid-template-columns:1fr auto;
+      align-items:end;
+      gap:24px;
+      padding:38px 0 30px;
+      background:var(--paper);
+    }
+
+    .collection-text{
+      max-width:760px;
+    }
+
+    .collection-copy{
+      max-width:720px;
+      margin:0;
+      color:#5c5b58;
+      font-size:23px;
+      font-weight:400;
+      line-height:1.25;
+    }
+
+    .collection-subcopy{
+      max-width:680px;
+      margin:14px 0 0;
+      color:#77746d;
+      font-size:15px;
+      line-height:1.45;
+    }
+
+    .toolbar{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:24px;
+      min-width:320px;
+    }
+
+    .product-count{
+      color:#96938d;
+      font-size:13px;
+      white-space:nowrap;
+    }
+
+    .filter-toggle{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      min-height:34px;
+      color:#343432;
+      font-size:18px;
+      font-weight:700;
+    }
+
+    .filter-icon{
+      width:18px;
+      height:18px;
+      stroke:currentColor;
+      stroke-width:1.8;
+      fill:none;
+    }
+
+    .filters{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      max-height:0;
+      padding:0;
+      overflow:hidden;
+      opacity:0;
+      scrollbar-width:none;
+      transition:max-height .28s ease, padding .28s ease, opacity .2s ease;
+    }
+
+    .filters.open{
+      max-height:80px;
+      padding:0 0 24px;
+      overflow:auto;
+      opacity:1;
+    }
+
+    .filters::-webkit-scrollbar{
+      display:none;
+    }
+
+    .filter-chip{
+      flex:0 0 auto;
+      min-height:32px;
+      padding:0 12px;
+      color:var(--deep-green);
+      border:1px solid rgba(49,87,93,.72);
+      border-radius:4px;
+      background:var(--paper);
+      font-size:13px;
+      transition:background .2s ease, color .2s ease;
+    }
+
+    .filter-chip:hover,
+    .filter-chip.active{
+      color:#fff;
+      background:var(--deep-green);
+    }
+
+    .products-grid{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0, 1fr));
+      gap:14px;
+      padding-bottom:54px;
+    }
+
+    .product-card{
+      min-width:0;
+      display:flex;
+      flex-direction:column;
+      background:var(--paper);
+      color:var(--ink);
+    }
+
+    .product-card[hidden]{
+      display:none;
+    }
+
+    .shoe-frame{
+      position:relative;
+      width:100%;
+      aspect-ratio:1 / 1.36;
+      overflow:hidden;
+      background:var(--fog);
+    }
+
+    .shoe-frame::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      z-index:1;
+      width:min(210px, 42%);
+      height:138px;
+      background:var(--fog);
+      pointer-events:none;
+    }
+
+    .shoe-shot{
+      position:absolute;
+      inset:0;
+      background-image:url("IMAGENES/saye-product-grid.png");
+      background-repeat:no-repeat;
+      background-size:400% auto;
+      background-position:var(--x) 0;
+      transform:scale(1.02);
+      transform-origin:top center;
+      transition:transform .5s ease;
+    }
+
+    .shoe-shot.alt{
+      background-image:url("IMAGENES/saye-product-grid-2.png");
+    }
+
+    .product-card:hover .shoe-shot{
+      transform:scale(1.055);
+    }
+
+    .badges{
+      position:absolute;
+      top:22px;
+      left:22px;
+      z-index:3;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:6px;
+      pointer-events:none;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      min-height:28px;
+      padding:0 7px;
+      color:var(--deep-green);
+      border:1px solid rgba(49,87,93,.88);
+      border-radius:4px;
+      background:rgba(247,247,245,.84);
+      font-size:13px;
+      line-height:1;
+    }
+
+    .badge.plain{
+      color:#484743;
+      border-color:transparent;
+      background:transparent;
+    }
+
+    .product-info{
+      padding:18px 14px 0;
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+
+    .product-title{
+      margin:0;
+      min-height:19px;
+      color:#111;
+      font-size:15px;
+      font-weight:700;
+      line-height:1.25;
+    }
+
+    .product-price,
+    .product-desc{
+      margin:0;
+      color:#343432;
+      font-size:14px;
+      line-height:1.28;
+    }
+
+    .product-desc{
+      color:#5f5d59;
+    }
+
+    .story-band{
+      display:grid;
+      grid-template-columns:minmax(0, .92fr) minmax(0, 1.08fr);
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      background:var(--paper);
+    }
+
+    .story-copy{
+      min-height:760px;
+      padding:34px 28px 28px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      border-right:1px solid var(--line);
+    }
+
+    .section-kicker{
+      margin:0 0 18px;
+      color:var(--deep-green);
+      font-size:13px;
+      font-weight:700;
+      text-transform:uppercase;
+    }
+
+    .story-title,
+    .footer-title{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:54px;
+      line-height:1.02;
+      font-weight:400;
+    }
+
+    .story-title{
+      max-width:940px;
+      color:#0b0b0b;
+      font-size:92px;
+      line-height:.92;
+      font-weight:800;
+      text-transform:uppercase;
+    }
+
+    .story-text{
+      max-width:620px;
+      margin:24px 0 0;
+      color:#4f4d49;
+      font-size:18px;
+      line-height:1.52;
+    }
+
+    .value-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:1px;
+      margin-top:44px;
+      border:1px solid var(--line);
+      background:var(--line);
+    }
+
+    .value-item{
+      min-height:118px;
+      padding:18px;
+      background:var(--paper);
+    }
+
+    .value-item strong{
+      display:block;
+      margin-bottom:7px;
+      color:#141414;
+      font-size:15px;
+    }
+
+    .value-item span{
+      display:block;
+      color:#696761;
+      font-size:14px;
+      line-height:1.38;
+    }
+
+    .story-visual{
+      min-height:760px;
+      overflow:hidden;
+      background:var(--paper);
+    }
+
+    .story-visual img{
+      object-position:center 68%;
+      transform:scale(1.5);
+    }
+
+    .process-intro{
+      padding:84px 18px 78px;
+      background:var(--paper);
+      border-bottom:1px solid var(--line);
+    }
+
+    .process-intro-inner{
+      max-width:1220px;
+      margin:0 auto;
+      text-align:center;
+    }
+
+    .process-intro-text{
+      max-width:1080px;
+      margin:0 auto;
+      color:#171717;
+      font-size:31px;
+      line-height:1.18;
+      font-weight:700;
+      text-transform:uppercase;
+    }
+
+    .process-intro-subtitle{
+      max-width:860px;
+      margin:18px auto 0;
+      color:#77746d;
+      font-size:17px;
+      line-height:1.45;
+      text-transform:none;
+    }
+
+    .process-intro-actions{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:28px;
+    }
+
+    .steps-section{
+      background:var(--paper);
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
+    .steps-grid{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:1px;
+      background:var(--line);
+      border-left:1px solid var(--line);
+      border-right:1px solid var(--line);
+    }
+
+    .step-card{
+      min-height:340px;
+      padding:28px 24px 30px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      background:var(--paper);
+    }
+
+    .step-number{
+      color:#77746d;
+      font-size:13px;
+      font-weight:700;
+      text-transform:uppercase;
+    }
+
+    .step-body h3{
+      margin:0;
+      color:#0b0b0b;
+      font-size:34px;
+      line-height:1.02;
+      font-weight:800;
+      text-transform:uppercase;
+    }
+
+    .step-body p{
+      max-width:440px;
+      margin:18px 0 0;
+      color:#77746d;
+      font-size:16px;
+      line-height:1.45;
+      text-transform:uppercase;
+    }
+
+    .faq{
+      background:var(--paper);
+      border-bottom:1px solid var(--line);
+    }
+
+    .faq-shell{
+      border-left:1px solid var(--line);
+      border-right:1px solid var(--line);
+    }
+
+    .faq-head{
+      padding:34px 32px 28px;
+      border-bottom:1px solid var(--line);
+    }
+
+    .faq-kicker{
+      margin:0 0 14px;
+      color:#77746d;
+      font-size:13px;
+      font-weight:700;
+      text-transform:uppercase;
+    }
+
+    .faq-title{
+      max-width:520px;
+      margin:0;
+      color:#0b0b0b;
+      font-size:78px;
+      line-height:.9;
+      font-weight:800;
+      text-transform:uppercase;
+    }
+
+    .faq-list{
+      display:flex;
+      flex-direction:column;
+    }
+
+    .faq-item{
+      border-bottom:1px solid var(--line);
+      background:var(--paper);
+    }
+
+    .faq-question{
+      width:100%;
+      min-height:72px;
+      padding:20px 32px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+      color:#242424;
+      text-align:left;
+      font-size:21px;
+      line-height:1.2;
+    }
+
+    .faq-icon{
+      color:#77746d;
+      font-size:22px;
+      flex:0 0 auto;
+    }
+
+    .faq-answer{
+      display:grid;
+      grid-template-rows:0fr;
+      transition:grid-template-rows .24s ease;
+    }
+
+    .faq-item.open .faq-answer{
+      grid-template-rows:1fr;
+    }
+
+    .faq-answer-inner{
+      overflow:hidden;
+    }
+
+    .faq-answer p{
+      max-width:1050px;
+      margin:0;
+      padding:0 32px 28px;
+      color:#77746d;
+      font-size:17px;
+      line-height:1.55;
+    }
+
+    .footer{
+      padding:72px 18px 40px;
+      text-align:center;
+      background:var(--paper);
+    }
+
+    .footer-title{
+      max-width:840px;
+      margin:0 auto;
+      font-size:48px;
+    }
+
+    .footer-actions{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:30px;
+    }
+
+    .button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:42px;
+      padding:0 20px;
+      color:#fff;
+      border:1px solid var(--ink);
+      background:var(--ink);
+      font-size:14px;
+      font-weight:700;
+      transition:background .2s ease, color .2s ease;
+    }
+
+    .button.secondary{
+      color:var(--ink);
+      background:transparent;
+    }
+
+    .button:hover{
+      color:var(--ink);
+      background:transparent;
+    }
+
+    .button.secondary:hover{
+      color:#fff;
+      background:var(--ink);
+    }
+
+    .footer-meta{
+      margin-top:54px;
+      display:flex;
+      justify-content:center;
+      gap:28px;
+      flex-wrap:wrap;
+      color:#77736d;
+      font-size:13px;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(20px);
+      transition:opacity .65s ease, transform .65s ease;
+    }
+
+    .reveal.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    @media (max-width: 1280px){
+      .impact-title{
+        font-size:92px;
+      }
+
+      .products-grid{
+        grid-template-columns:repeat(3, minmax(0, 1fr));
+      }
+
+      .steps-grid{
+        grid-template-columns:repeat(2, minmax(0,1fr));
+      }
+
+    }
+
+    @media (max-width: 1024px){
+      :root{--nav-h:58px}
+
+      .container{
+        padding:0 14px;
+      }
+
+      .wordmark{
+        font-size:36px;
+      }
+
+      .impact-grid{
+        grid-template-columns:1fr;
+      }
+
+      .impact-media{
+        min-height:480px;
+      }
+
+      .impact-title{
+        font-size:76px;
+      }
+
+      .collection-intro{
+        grid-template-columns:1fr;
+      }
+
+      .toolbar{
+        justify-content:space-between;
+        min-width:0;
+      }
+
+      .products-grid{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+      }
+
+      .story-band{
+        grid-template-columns:1fr;
+      }
+
+      .story-copy{
+        min-height:auto;
+        padding:42px 28px 34px;
+        border-right:0;
+        border-bottom:1px solid var(--line);
+      }
+
+      .story-title{
+        font-size:76px;
+      }
+
+      .story-visual{
+        min-height:520px;
+      }
+
+      .step-card{
+        min-height:260px;
+      }
+    }
+
+    @media (max-width: 720px){
+      .nav-inner{
+        gap:8px;
+      }
+
+      .nav-left{
+        gap:6px;
+      }
+
+      .wordmark{
+        font-size:32px;
+      }
+
+      .nav-actions .icon-btn:nth-child(1),
+      .nav-actions .icon-btn:nth-child(2){
+        display:none;
+      }
+
+      .impact-media{
+        min-height:360px;
+      }
+
+      .impact-content{
+        padding:28px 18px 22px;
+      }
+
+      .impact-title{
+        font-size:48px;
+        line-height:.95;
+      }
+
+      .impact-subcopy{
+        font-size:13px;
+      }
+
+      .impact-actions{
+        align-items:stretch;
+        flex-direction:column;
+      }
+
+      .impact-actions .button{
+        width:100%;
+      }
+
+      .impact-footer{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:14px;
+      }
+
+      .breadcrumb{
+        min-height:52px;
+        font-size:14px;
+      }
+
+      .collection-intro{
+        padding:26px 0 22px;
+      }
+
+      .collection-copy{
+        font-size:19px;
+      }
+
+      .collection-subcopy{
+        font-size:14px;
+      }
+
+      .filter-toggle{
+        font-size:15px;
+      }
+
+      .products-grid{
+        grid-template-columns:1fr;
+        gap:28px;
+      }
+
+      .shoe-frame{
+        aspect-ratio:1 / 1.18;
+      }
+
+      .shoe-shot{
+        background-size:400% auto;
+      }
+
+      .story-copy{
+        padding:42px 22px 34px;
+      }
+
+      .story-title,
+      .footer-title{
+        font-size:34px;
+      }
+
+      .story-title{
+        font-size:46px;
+      }
+
+      .story-text{
+        font-size:16px;
+      }
+
+      .value-grid{
+        grid-template-columns:1fr;
+      }
+
+      .story-visual{
+        min-height:360px;
+      }
+
+      .steps-grid{
+        grid-template-columns:1fr;
+      }
+
+      .process-intro{
+        padding:48px 18px 42px;
+      }
+
+      .process-intro-text{
+        font-size:20px;
+      }
+
+      .process-intro-subtitle{
+        font-size:14px;
+      }
+
+      .process-intro-actions{
+        flex-direction:column;
+      }
+
+      .step-card{
+        min-height:260px;
+        padding:22px;
+      }
+
+      .step-body h3{
+        font-size:28px;
+      }
+
+      .step-body p{
+        font-size:14px;
+      }
+
+      .faq-head,
+      .faq-question,
+      .faq-answer p{
+        padding-left:18px;
+        padding-right:18px;
+      }
+
+      .faq-title{
+        font-size:48px;
+      }
+
+      .faq-question{
+        min-height:64px;
+        font-size:17px;
+      }
+
+      .footer{
+        padding-top:52px;
+      }
+
+      .footer-actions{
+        flex-direction:column;
+      }
+
+      .button{
+        width:100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar" aria-label="Principal">
+    <div class="container nav-inner">
+      <div class="nav-left">
+        <button class="hamburger" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" type="button">
+          <span class="hamburger-lines" aria-hidden="true"><span></span></span>
+        </button>
+      </div>
+
+      <a class="wordmark" href="#top" aria-label="SAYE home">SAYE</a>
+
+      <div class="nav-actions" aria-label="Acciones">
+        <button class="icon-btn" type="button" aria-label="Cuenta">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 21a8 8 0 0 0-16 0" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+        </button>
+        <button class="icon-btn" type="button" aria-label="Bolsa">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 8h12l-1 13H7L6 8Z" />
+            <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+          </svg>
+        </button>
+        <button class="icon-btn" type="button" aria-label="Buscar">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m16.5 16.5 4 4" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu container" id="mobileMenu">
+      <a href="#segunda-vida">Pre-Owned</a>
+      <a href="#catalogo">Catalogo</a>
+      <a href="#how-it-works">Como funciona</a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="impact-hero" id="segunda-vida" aria-labelledby="impact-title">
+      <div class="container">
+        <div class="impact-grid reveal">
+          <div class="impact-media">
+            <img
+              src="IMAGENES/saye-best-sellers.png"
+              alt="Sneakers SAYE recuperadas para una segunda vida"
+            />
+          </div>
+
+          <div class="impact-content">
+            <div>
+              <p class="impact-kicker">SAYE / Pre-Owned selection</p>
+              <h1 class="impact-title" id="impact-title">
+                <span>Second</span>
+                <span>life</span>
+                <span>sneakers.</span>
+                <span>Not new.</span>
+                <span>Still SAYE.</span>
+              </h1>
+
+              <p class="impact-subcopy">
+                Una seleccion de zapatillas SAYE con una nueva oportunidad.
+                Producto recuperado, estado revisado y materiales responsables
+                preparados para seguir en circulacion.
+              </p>
+
+              <div class="impact-actions">
+                <a class="button" href="#catalogo">Catálogo pre-owned</a>
+                <a class="button secondary" href="#proceso-reventa">Vender tus SAYE</a>
+              </div>
+            </div>
+
+            <div class="impact-footer">
+              <p class="impact-note">
+              </p>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="breadcrumb container" aria-label="Ruta">
+      <a href="#top">Home</a>
+      <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="m9 18 6-6-6-6" />
+      </svg>
+      <span>Pre-Owned</span>
+    </div>
+
+    <section class="hero" id="catalogo" aria-labelledby="collection-title">
+      <div class="container">
+        <div class="collection-intro">
+          <div class="collection-text">
+            <h2 class="collection-copy" id="collection-title">SAYE Pre-Owned:</h2>
+            <p class="collection-subcopy">
+              Sneakers revisadas una a una para volver a circular.
+            </p>
+          </div>
+
+          <div class="toolbar" aria-label="Herramientas de catalogo">
+            <span class="product-count"><span id="productCount">8</span> products</span>
+            <button class="filter-toggle" id="filterToggle" type="button" aria-controls="filters" aria-expanded="false">
+              <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 7h10" />
+                <path d="M18 7h2" />
+                <path d="M16 5v4" />
+                <path d="M4 17h3" />
+                <path d="M11 17h9" />
+                <path d="M9 15v4" />
+              </svg>
+              FILTER
+            </button>
+          </div>
+        </div>
+
+        <div class="filters" id="filters" aria-label="Filtros">
+          <button class="filter-chip active" type="button" data-filter="all">All</button>
+          <button class="filter-chip" type="button" data-filter="nuevo">Nuevo</button>
+          <button class="filter-chip" type="button" data-filter="como">Como nuevo</button>
+          <button class="filter-chip" type="button" data-filter="perfecto">Perfectas condiciones</button>
+          <button class="filter-chip" type="button" data-filter="suede">Suede</button>
+          <button class="filter-chip" type="button" data-filter="bio">Bio-based</button>
+        </div>
+
+        <div class="products-grid" aria-label="Listado de productos">
+          <a class="product-card reveal" href="#materials" data-tags="corn como bio">
+            <div class="shoe-frame">
+              <div class="shoe-shot" style="--x:0%;"></div>
+              <div class="badges">
+                <span class="badge">PRE-OWNED</span>
+              </div>
+            </div>
+            <div class="product-info">
+              <h2 class="product-title">M89 Icon - Off-white</h2>
+              <p class="product-price">118,00 EUR</p>
+              <p class="product-desc">Tipo: corn vegan leather - Estado: como nuevo.</p>
+            </div>
+          </a>
+
+          <a class="product-card reveal" href="#materials" data-tags="cactus perfecto bio">
+            <div class="shoe-frame">
+              <div class="shoe-shot" style="--x:33.333%;"></div>
+              <div class="badges">
+                <span class="badge">PRE-OWNED</span>
+              </div>
+            </div>
+            <div class="product-info">
+              <h2 class="product-title">M89 Icon Cactus - Vanilla &amp; Basil</h2>
+              <p class="product-price">122,00 EUR</p>
+              <p class="product-desc">Tipo: cactus material - Estado: perfectas condiciones.</p>
+            </div>
+          </a>
+
+          <a class="product-card reveal" href="#materials" data-tags="lignify nuevo bio">
+            <div class="shoe-frame">
+              <div class="shoe-shot" style="--x:66.666%;"></div>
+              <div class="badges">
+                <span class="badge">PRE-OWNED</span>
+              </div>
+            </div>
+            <div class="product-info">
+              <h2 class="product-title">M70 Soul - Lignify Off-white &amp; Gray</h2>
+              <p class="product-price">132,00 EUR</p>
+              <p class="product-desc">Tipo: lignify bio-based - Estado: nuevo sin uso.</p>
+            </div>
+          </a>
+
+          <a class="product-card reveal" href="#materials" data-tags="suede perfecto">
+            <div class="shoe-frame">
+              <div class="shoe-shot" style="--x:100%;"></div>
+              <div class="badges">
+                <span class="badge">PRE-OWNED</span>
+              </div>
+            </div>
+            <div class="product-info">
+              <h2 class="product-title">M82 Core - Stone</h2>
+              <p class="product-price">136,00 EUR</p>
+              <p class="product-desc">Tipo: suede - Estado: perfectas condiciones.</p>
+            </div>
+          </a>
+
+          <a class="product-card reveal" href="#materials" data-tags="suede perfecto">
+            <div class="shoe-frame">
+              <div class="shoe-shot alt" style="--x:0%;"></div>
+              <div class="badges">
+                <span class="badge">PRE-OWNED</span>
+              </div>
+            </div>
+            <div class="product-info">
+              <h2 class="product-title">M82 Core - Storm</h2>
+              <p class="product-price">129,00 EUR</p>
+              <p class="product-desc">Tipo: suede - Estado: perfectas condiciones.</p>
+            </div>
+          </a>
+
+          <a class="product-card reveal" href="#materials" data-tags="suede como">
+            <div class="shoe-frame">
+              <div class="shoe-shot alt" style="--x:33.333%;"></div>
+              <div class="badges">
+                <span class="badge">PRE-OWNED</span>
+              </div>
+            </div>
+            <div class="product-info">
+              <h2 class="product-title">M89 Icon - Nut</h2>
+              <p class="product-price">115,00 EUR</p>
+              <p class="product-desc">Tipo: suede - Estado: como nuevo.</p>
+            </div>
+          </a>
+
+          <a class="product-card reveal" href="#materials" data-tags="suede perfecto">
+            <div class="shoe-frame">
+              <div class="shoe-shot alt" style="--x:66.666%;"></div>
+              <div class="badges">
+                <span class="badge">PRE-OWNED</span>
+              </div>
+            </div>
+            <div class="product-info">
+              <h2 class="product-title">M89 Icon - Biscuit</h2>
+              <p class="product-price">118,00 EUR</p>
+              <p class="product-desc">Tipo: suede - Estado: perfectas condiciones.</p>
+            </div>
+          </a>
+
+          <a class="product-card reveal" href="#materials" data-tags="suede nuevo">
+            <div class="shoe-frame">
+              <div class="shoe-shot alt" style="--x:100%;"></div>
+              <div class="badges">
+                <span class="badge">PRE-OWNED</span>
+              </div>
+            </div>
+            <div class="product-info">
+              <h2 class="product-title">M70 Soul - Sand &amp; Forest</h2>
+              <p class="product-price">134,00 EUR</p>
+              <p class="product-desc">Tipo: suede - Estado: nuevo sin uso.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-band" id="materials" aria-labelledby="materials-title">
+      <div class="story-copy reveal">
+        <div>
+          <p class="section-kicker">Segunda vida / mismo criterio</p>
+          <h2 class="story-title" id="materials-title">Revisadas para volver. Preparadas para seguir.</h2>
+          <p class="story-text">
+            El proceso esta pensado para evaluar cada par con claridad y mantener una seleccion
+            coherente con el universo SAYE. Cuanto mas precisa sea la informacion aportada,
+            mas agil sera la revision del producto.
+          </p>
+
+          <div class="value-grid">
+            <div class="value-item">
+              <strong>Producto SAYE</strong>
+              <span>Sneakers de la marca con potencial para seguir en circulacion.</span>
+            </div>
+            <div class="value-item">
+              <strong>Revision cuidada</strong>
+              <span>Evaluacion del estado general, material, suela y presentacion del par.</span>
+            </div>
+            <div class="value-item">
+              <strong>Informacion clara</strong>
+              <span>Cuantos mas detalles y mejores imagenes, mas eficiente sera el proceso.</span>
+            </div>
+            <div class="value-item">
+              <strong>Continuidad circular</strong>
+              <span>Una forma mas ordenada de extender la vida util del producto.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-visual reveal">
+        <img src="IMAGENES/imagen2.png" alt="Detalle editorial de sneakers SAYE" />
+      </div>
+    </section>
+
+    <section class="process-intro" id="proceso-reventa" aria-labelledby="process-intro-title">
+      <div class="container">
+        <div class="process-intro-inner reveal">
+          <p class="section-kicker" id="process-intro-title">Proceso / Reventa</p>
+          <p class="process-intro-text">
+            Empieza el proceso para dar una segunda vida a tus sneakers SAYE.
+          </p>
+          <p class="process-intro-subtitle">
+            desde aquí accederás a la aplicación donde podrás indicar el producto,
+            su estado y toda la información necesaria para la revisión.
+          </p>
+          <div class="process-intro-actions">
+            <a class="button" href="app-reventa.html">Vender mis SAYE</a>
+            <a class="button secondary" href="#antes-de-empezar">Más información</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="steps-section" id="how-it-works" aria-label="Pasos de SAYE Pre-Owned">
+      <div class="container">
+        <div class="steps-grid reveal">
+          <article class="step-card">
+            <span class="step-number">Paso 01</span>
+            <div class="step-body">
+              <h3>Indica tu producto</h3>
+              <p>Selecciona la categoria, anade los datos basicos y describe el par que quieres vender.</p>
+            </div>
+          </article>
+
+          <article class="step-card">
+            <span class="step-number">Paso 02</span>
+            <div class="step-body">
+              <h3>Comparte su estado</h3>
+              <p>Senala el estado general y sube imagenes claras para que el equipo pueda revisar mejor la solicitud.</p>
+            </div>
+          </article>
+
+          <article class="step-card">
+            <span class="step-number">Paso 03</span>
+            <div class="step-body">
+              <h3>Recibe una valoracion</h3>
+              <p>La solicitud se analiza y, si el producto encaja en el programa, se genera una propuesta.</p>
+            </div>
+          </article>
+
+          <article class="step-card">
+            <span class="step-number">Paso 04</span>
+            <div class="step-body">
+              <h3>Confirma y continua</h3>
+              <p>Si aceptas la propuesta, se activa el siguiente paso del proceso dentro de la plataforma conectada.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="antes-de-empezar" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="faq-shell reveal">
+          <div class="faq-head">
+            <p class="faq-kicker">Ayuda / Preguntas frecuentes</p>
+            <h2 class="faq-title" id="faq-title">Antes de empezar</h2>
+          </div>
+
+          <div class="faq-list">
+            <div class="faq-item open">
+              <button class="faq-question" type="button">
+                <span>Como funciona el proceso?</span>
+                <span class="faq-icon">x</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>
+                    Accederas a la aplicacion donde podras indicar el producto, compartir su estado,
+                    anadir imagenes y enviar la solicitud para revision. A partir de ahi, el equipo
+                    valorara si el par puede incorporarse al programa pre-owned.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                <span>Como envio el producto?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>
+                    Una vez aceptada la propuesta, recibiras las instrucciones del siguiente paso,
+                    incluyendo el metodo de envio cuando corresponda.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                <span>Cuando recibire la oferta por mi producto?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>
+                    Tras enviar correctamente la informacion y las imagenes, la solicitud entra en
+                    revision. La valoracion se comunicara dentro de la plataforma o por el canal asociado.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                <span>Como recibire el pago o reembolso?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>
+                    Si la oferta es aceptada, el metodo de pago, saldo o reembolso disponible
+                    se mostrara en la aplicacion, donde se completara el resto del proceso.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                <span>Estoy obligado a aceptar la oferta?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>
+                    No. Podras revisar la propuesta recibida y decidir si quieres continuar
+                    antes de completar la siguiente fase.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                <span>Que pasa si el estado no coincide con la evaluacion?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>
+                    Si durante la revision se detecta que el estado real no coincide con la
+                    informacion aportada, la propuesta podra ajustarse o descartarse segun los criterios del programa.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <h2 class="footer-title">Give your SAYE another life.</h2>
+      <div class="footer-actions">
+        <a class="button" href="#catalogo">Comprar pre-owned</a>
+        <a class="button secondary" href="proceso.html">Vender mi par</a>
+      </div>
+      <div class="footer-meta">
+        <span>SAYE</span>
+        <span>Pre-Owned</span>
+        <span>Segunda vida</span>
+        <span>Producto revisado</span>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const filterToggle = document.getElementById('filterToggle');
+    const filters = document.getElementById('filters');
+    const filterButtons = document.querySelectorAll('.filter-chip');
+    const products = document.querySelectorAll('.product-card');
+    const productCount = document.getElementById('productCount');
+
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('open');
+        menuToggle.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      mobileMenu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    if (filterToggle && filters) {
+      filterToggle.addEventListener('click', () => {
+        const isOpen = filters.classList.toggle('open');
+        filterToggle.setAttribute('aria-expanded', String(isOpen));
+      });
+    }
+
+    function updateProductCount() {
+      const visibleProducts = Array.from(products).filter((product) => !product.hidden);
+      if (productCount) productCount.textContent = String(visibleProducts.length);
+    }
+
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+
+        filterButtons.forEach((item) => item.classList.remove('active'));
+        button.classList.add('active');
+
+        products.forEach((product) => {
+          const tags = product.dataset.tags || '';
+          product.hidden = filter !== 'all' && !tags.includes(filter);
+        });
+
+        updateProductCount();
+      });
+    });
+
+    document.querySelectorAll('.faq-question').forEach((question) => {
+      question.addEventListener('click', () => {
+        const item = question.closest('.faq-item');
+        if (!item) return;
+
+        const isOpen = item.classList.toggle('open');
+        const icon = question.querySelector('.faq-icon');
+        if (icon) icon.textContent = isOpen ? 'x' : '+';
+      });
+    });
+
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealEls.forEach((el) => observer.observe(el));
+    updateProductCount();
+  </script>
+</body>
+</html>
